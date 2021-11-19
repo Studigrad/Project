@@ -1,0 +1,26 @@
+<%- include('partials/head')%>
+<body class="d-flex flex-column vh-100">
+
+    <%- include('partials/navbar')%>
+        <main class="container mt-5">
+        <h1>Валюты</h1>
+
+     
+          <div class="mx-auto col card border-success mb-3 " style="max-width: 18rem;">
+            <% for(let ticker of data){ %>
+            <div class="mx-auto card-header bg-transparent border-success "><%= ticker.symbol %> </div>
+            <div class="card-body text-success">
+              <h5 class="card-title"><%= ticker.symbol %> </h5>
+              <p class="card-text">Цена покупки: <%= ticker.bidPrice %>$</p>
+              <p class="card-text">Цена продажи: <%= ticker.askPrice %>$</p>
+              <a href="" class="card-text" >Подробнее</a>
+            </div>
+            <div class="card-footer bg-transparent border-success"></div>
+            
+            <% } %> 
+          </div>
+
+
+        </main>
+
+    <%- include('partials/footer')%>
